@@ -1,0 +1,278 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,600|Poppins:400,700,600");
+      :root {
+        --font-opensans: "Open Sans", sans-serif;
+        --font-poppins: "Poppins", sans-serif;
+        --color1: #edf1f5;
+        --color2: #f6f9fe;
+      }
+      body {
+        position: relative;
+        color: #222222;
+        margin: 0;
+        font-family: var(--font-opensans);
+        transition: 0.5s;
+        background: var(--color1);
+        padding-left: 68px;
+        font-size: 14px;
+      }
+      a {
+        text-decoration: none;
+      }
+      .sub-heading {
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .a-card {
+        background: #ffffff;
+        box-shadow: 0px 20px 50px rgb(191 21 108 / 5%);
+        border-radius: 7px !important;
+        padding: 15px;
+      }
+      .btn-primary {
+        color: #fff;
+        background-color: #3246d2;
+        border-color: #3246d2;
+      }
+      .sidebar {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        transition: 0.5s;
+        z-index: 100;
+        width: 68px;
+        left: 0;
+        padding: 0.5rem 1rem 0 0;
+        font-size: 15px;
+      }
+      .sidebar .nav {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+      .sidebar .nav .nav_logo,
+      .sidebar .nav .nav_link {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: center;
+        column-gap: 1rem;
+        padding: 0.5rem 0 0.5rem 1.5rem;
+      }
+      .sidebar .nav .nav_logo {
+        display: none;
+        padding: 0.5rem 0 0.5rem 1.5rem;
+      }
+      .sidebar .nav .nav_logo-icon {
+        font-size: 1.25rem;
+        color: #000;
+      }
+      .sidebar .nav .nav_logo-name {
+        color: #000;
+        font-weight: 700;
+      }
+      .sidebar .nav .nav_link {
+        position: relative;
+        color: #98a1b0;
+        margin-bottom: 1.5rem;
+        transition: 0.3s;
+      }
+      .sidebar .nav .nav_link.active {
+        color: #3246d2;
+      }
+      .sidebar .nav .nav_link.active::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 2px;
+        height: 32px;
+        background-color: #3246d2;
+      }
+      .main-content .content-area {
+        background: var(--color2);
+        height: 100vh;
+      }
+      .main-content .page-header-title {
+        font-weight: 600;
+      }
+      .main-content .page-header-widget {
+        display: flex;
+        column-gap: 10px;
+      }
+      .main-content .page-header-widget input {
+        background: #ffffff;
+        box-shadow: 0px 20px 50px rgb(191 21 108 / 5%);
+        border-radius: 7px !important;
+        color: #98a1b0;
+        font-size: 13px;
+        border: none;
+        padding-left: 30px;
+      }
+      .main-content .page-header-widget .input-group-btn {
+        position: absolute;
+        padding-top: 4px;
+        z-index: 9;
+      }
+      .main-content .page-header-widget .page-header-widget-settings {
+        background: #ffffff;
+        box-shadow: 0px 20px 50px rgb(191 21 108 / 5%);
+        border-radius: 7px !important;
+        color: #98a1b0;
+        font-size: 16px;
+        border: none;
+        padding: 10px;
+      }
+      @media screen and (min-width: 768px) {
+        body {
+          padding-left: calc(68px + 156px);
+        }
+        .sidebar {
+          padding: 1rem 1rem 0 0;
+          width: calc(68px + 156px) !important;
+        }
+        .sidebar .nav .nav_logo {
+          display: block;
+          text-align: center;
+          padding: 20px 0;
+          font-size: 24px;
+          font-family: var(--font-poppins);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <nav class="nav">
+        <div>
+          <a href="#" class="nav_logo">
+            <span class="nav_logo-name">Admin Panel</span>
+          </a>
+          <div class="nav_list">
+            <a href="#" class="nav_link active">
+              <i class="bx bx-grid-alt nav_icon"></i>
+              <span class="nav_name">Dashboard</span>
+            </a>
+            <a href="#" class="nav_link">
+              <i class="bx bx-user nav_icon"></i>
+              <span class="nav_name">Users</span>
+            </a>
+            <a href="#" class="nav_link">
+              <i class="bx bx-message-square-detail nav_icon"></i>
+              <span class="nav_name">Messages</span>
+            </a>
+            <a href="#" class="nav_link">
+              <i class="bx bx-bookmark nav_icon"></i>
+              <span class="nav_name">Bookmark</span>
+            </a>
+            <a href="#" class="nav_link">
+              <i class="bx bx-folder nav_icon"></i>
+              <span class="nav_name">Files</span>
+            </a>
+            <a href="#" class="nav_link">
+              <i class="bx bx-bar-chart-alt-2 nav_icon"></i>
+              <span class="nav_name">Stats</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container-fluid main-content">
+      <div class="row">
+        <div class="col-sm-9 col-md-9 content-area">
+          <div class="row mt-3 mb-3">
+            <div class="col-md-6 page-header-title">
+              <h4 class="page-title">Dashbaord</h4>
+            </div>
+            <div class="col-md-12 col-lg-6 page-header-widget">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search Here..."
+                />
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="button">
+                    <i class="bx bx-search-alt-2"></i>
+                  </button>
+                </div>
+              </div>
+              <button class="page-header-widget-settings">
+                <i class="bx bx-cog"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <!--form -->
+              <div class="a-card">
+                <form>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Email address</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                    <div id="emailHelp" class="form-text">
+                      We'll never share your email with anyone else.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"
+                      >Password</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="exampleInputPassword1"
+                    />
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="exampleCheck1"
+                    />
+                    <label class="form-check-label" for="exampleCheck1"
+                      >Check me out</label
+                    >
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+
+              <!--form -->
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-md-3 right-sidebar">
+          <div class="mt-3">
+            <h6 class="sub-heading">Right Sidebar</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
